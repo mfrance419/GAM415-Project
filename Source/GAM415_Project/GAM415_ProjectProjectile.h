@@ -21,13 +21,13 @@ class AGAM415_ProjectProjectile : public AActor
 	/** Projectile movement component */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	UProjectileMovementComponent* ProjectileMovement;
-
+	// Static mesh component
 	UPROPERTY(EditAnywhere)
 	UStaticMeshComponent* ballMesh;
-
+	//Base material for the projectile
 	UPROPERTY(EditAnywhere)
 	UMaterial* baseMat;
-
+	//Dynamic material instance for the projectile
 	UPROPERTY()
 	FLinearColor randColor;
 

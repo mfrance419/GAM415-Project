@@ -66,10 +66,10 @@ void AGAM415_ProjectProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* Othe
 	{
 		//Generate random numbers for the frame of the decal
 		float frameNum = UKismetMathLibrary::RandomFloatInRange(0.f, 3.f);
-
+		//Spawn a decal at the location of the hit with a random size and rotation
 		auto Decal = UGameplayStatics::SpawnDecalAtLocation(GetWorld(), baseMat, FVector(UKismetMathLibrary::RandomFloatInRange(20.f, 40.f)), Hit.Location, Hit.Normal.Rotation(), 0.f);
 		auto MatInstance = Decal->CreateDynamicMaterialInstance();
-
+		
 		MatInstance->SetVectorParameterValue("Color", randColor);
 		MatInstance->SetScalarParameterValue("Frame", frameNum);
 	}
