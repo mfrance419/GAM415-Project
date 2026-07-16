@@ -4,6 +4,8 @@
 #include "CubeDMIMod.h"
 #include "GAM415_ProjectCharacter.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "NiagaraComponent.h"
+#include "NiagaraFunctionLibrary.h"
 
 // Sets default values
 ACubeDMIMod::ACubeDMIMod()
@@ -53,11 +55,19 @@ void ACubeDMIMod::OnOverLapBegin(UPrimitiveComponent *OverlappedComp, AActor *Ot
 		float ranNumY = UKismetMathLibrary::RandomFloatInRange(0.0f, 1.f);
 		float ranNumZ = UKismetMathLibrary::RandomFloatInRange(0.0f, 1.f);
 
-		FVector randColor = FVector4(ranNumX, ranNumY, ranNumZ, 1.f);
+		FLinearColor randColor = FLinearColor(ranNumX, ranNumY, ranNumZ, 1.f);
+
+		if (colorP)
+		{
+			UNiagaraComponent* particleComp = UNiagaraFunctionLibrary::SpawnSystemAttached(colorP, OtherComp, NAME_None, FVector(0.f), FRotator(0.f), EAttachLocation::KeepRelativeOffset, true);
+			particleComp->SetNiagaraVariableLinearColor("RandColor", randColor);
+		}
+
 		if (dmiMat)
 		{
 			dmiMat->SetVectorParameterValue("Color", randColor);
 			dmiMat->SetScalarParameterValue("Darkness", ranNumX);
+			
 		}
 	}
 }
