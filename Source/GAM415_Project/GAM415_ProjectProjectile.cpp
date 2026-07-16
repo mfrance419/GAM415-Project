@@ -75,12 +75,6 @@ void AGAM415_ProjectProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* Othe
 		}
 
 
-
-
-
-
-
-
 		//Generate random numbers for the frame of the decal
 		float frameNum = UKismetMathLibrary::RandomFloatInRange(0.f, 3.f);
 		//Spawn a decal at the location of the hit with a random size and rotation
