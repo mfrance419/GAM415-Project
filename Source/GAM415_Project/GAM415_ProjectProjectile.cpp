@@ -66,8 +66,10 @@ void AGAM415_ProjectProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* Othe
 
 	if(OtherActor != nullptr)
 	{
+		//Checks if the Color Particle is valid
 		if(colorP)
 		{
+			//Spawn Particle at the location of the hit with a random color matching the color to the projectile
 			UNiagaraComponent* particleComp = UNiagaraFunctionLibrary::SpawnSystemAttached(colorP, HitComp, NAME_None, FVector(-20.f, 0.f, 0.f), FRotator(0.f, 0.f, 0.f), EAttachLocation::KeepRelativeOffset, true);
 			particleComp->SetNiagaraVariableLinearColor("RandomColor", randColor);
 			ballMesh->DestroyComponent();

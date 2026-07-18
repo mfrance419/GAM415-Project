@@ -48,9 +48,10 @@ void ACubeDMIMod::Tick(float DeltaTime)
 void ACubeDMIMod::OnOverLapBegin(UPrimitiveComponent *OverlappedComp, AActor *OtherActor, UPrimitiveComponent *OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult)
 {
 	AGAM415_ProjectCharacter* overlappedActor  = Cast<AGAM415_ProjectCharacter>(OtherActor);
-
+	//Checks if the overlapped actor is valid
 	if (overlappedActor)
 	{
+		//Randomly generates a color for the cube
 		float ranNumX = UKismetMathLibrary::RandomFloatInRange(0.0f, 1.f);
 		float ranNumY = UKismetMathLibrary::RandomFloatInRange(0.0f, 1.f);
 		float ranNumZ = UKismetMathLibrary::RandomFloatInRange(0.0f, 1.f);
@@ -59,6 +60,7 @@ void ACubeDMIMod::OnOverLapBegin(UPrimitiveComponent *OverlappedComp, AActor *Ot
 
 		if (colorP)
 		{
+			//Spawn particle where overlapped actor is with color matching the cube.
 			UNiagaraComponent* particleComp = UNiagaraFunctionLibrary::SpawnSystemAttached(colorP, OtherComp, NAME_None, FVector(0.f), FRotator(0.f), EAttachLocation::KeepRelativeOffset, true);
 			particleComp->SetNiagaraVariableLinearColor("RandColor", randColor);
 		}
