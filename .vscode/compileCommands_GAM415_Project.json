@@ -118,5 +118,21 @@
 			"@C:\\Users\\irnin\\Documents\\Unreal Projects\\GAM415_Project\\.vscode\\compileCommands_GAM415_Project\\GAM415_Project.1.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\irnin\\Documents\\Unreal Projects\\GAM415_Project\\Source\\GAM415_Project\\PerlinProcTerrain.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\irnin\\Documents\\Unreal Projects\\GAM415_Project\\.vscode\\compileCommands_GAM415_Project\\GAM415_Project.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\irnin\\Documents\\Unreal Projects\\GAM415_Project\\Source\\GAM415_Project\\PerlinProcTerrain.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\irnin\\Documents\\Unreal Projects\\GAM415_Project\\.vscode\\compileCommands_GAM415_Project\\GAM415_Project.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Source"
 	}
 ]
